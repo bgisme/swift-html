@@ -105,7 +105,7 @@ public extension Tag {
     
     @discardableResult
     func onEvent(_ e: Attribute.Event, _ function: Attribute.JSFunction?, _ condition: Bool = true) -> Self {
-        attribute("on" + e.rawValue.lowercased(), function, condition)
+        flagAttribute("on" + e.rawValue.lowercased() + " = " + (function ?? ""), nil, condition)
     }
 
     /// add multiple events and functions to a Tag
